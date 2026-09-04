@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -14,6 +13,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Tahoma, Arial, sans-serif;
       background: #07131f;
@@ -21,16 +24,36 @@
       line-height: 2;
     }
 
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(4, 13, 21, 0.97);
+      border-bottom: 1px solid #b08d3c;
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #eee6cd;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d6b45c;
+    }
+
     header {
-      min-height: 85vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 40px 20px;
       background:
-        radial-gradient(circle at top, #18384a 0%, #07131f 55%),
-        #07131f;
+        radial-gradient(circle at top, #21465a 0%, #07131f 60%);
       position: relative;
       overflow: hidden;
     }
@@ -40,26 +63,29 @@
       content: "✦";
       position: absolute;
       color: #d6b45c;
-      font-size: 90px;
       opacity: 0.12;
     }
 
     header::before {
-      top: 30px;
-      right: 30px;
+      font-size: 150px;
+      top: -30px;
+      right: 10px;
     }
 
     header::after {
-      bottom: 20px;
-      left: 30px;
+      font-size: 120px;
+      bottom: -20px;
+      left: 10px;
     }
 
     .hero {
       max-width: 850px;
+      position: relative;
+      z-index: 2;
     }
 
     .symbol {
-      font-size: 55px;
+      font-size: 60px;
       color: #d6b45c;
       margin-bottom: 10px;
     }
@@ -67,39 +93,18 @@
     h1 {
       font-size: 42px;
       color: #d6b45c;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 20px;
-      color: #ddd6bd;
+      font-size: 21px;
+      color: #e0d7bb;
       margin-bottom: 25px;
     }
 
     .hero-text {
-      color: #c8d1d5;
       font-size: 17px;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(5, 15, 25, 0.95);
-      border-bottom: 1px solid #9c7d35;
-      padding: 12px;
-      text-align: center;
-    }
-
-    nav a {
-      color: #eee6cd;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #d6b45c;
+      color: #c7d2d6;
     }
 
     section {
@@ -111,21 +116,28 @@
     .section-title {
       text-align: center;
       color: #d6b45c;
-      font-size: 28px;
+      font-size: 29px;
       margin-bottom: 35px;
+    }
+
+    .section-title::after {
+      content: " ✦ ";
+      display: block;
+      font-size: 18px;
+      margin-top: 5px;
+      opacity: 0.8;
     }
 
     .card {
       background: #0d202e;
-      border: 1px solid #284454;
-      border-radius: 18px;
+      border: 1px solid #294756;
+      border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      margin-bottom: 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
     }
 
     .card p {
-      color: #d3dadd;
+      color: #d3dcdf;
       font-size: 16px;
     }
 
@@ -137,59 +149,78 @@
 
     .info {
       text-align: center;
-      padding: 25px;
+      padding: 30px 20px;
       background: #0d202e;
-      border: 1px solid #284454;
-      border-radius: 18px;
+      border: 1px solid #294756;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
     }
 
     .info-icon {
-      font-size: 35px;
+      font-size: 38px;
       margin-bottom: 8px;
     }
 
     .info h3 {
       color: #d6b45c;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+      font-size: 20px;
     }
 
     .info p {
       color: #ccd5d8;
+      font-size: 15px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 18px;
-      padding: 10px 22px;
+      margin-top: 20px;
+      padding: 10px 24px;
       border-radius: 30px;
       background: #d6b45c;
       color: #07131f;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.2s;
     }
 
     .button:hover {
       background: #ead28a;
+      transform: translateY(-2px);
     }
 
     .coming {
       text-align: center;
       padding: 40px 20px;
-      border: 1px dashed #9c7d35;
-      border-radius: 18px;
-      color: #cfd7da;
+      background: #0d202e;
+      border: 1px dashed #b08d3c;
+      border-radius: 20px;
+    }
+
+    .coming h3 {
+      color: #d6b45c;
+      margin-bottom: 10px;
+    }
+
+    .coming p {
+      color: #cbd5d8;
+    }
+
+    .social {
+      text-align: center;
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       background: #040c13;
-      border-top: 1px solid #284454;
+      border-top: 1px solid #294756;
       color: #9eaaae;
       font-size: 14px;
     }
 
     @media (max-width: 650px) {
+
       h1 {
         font-size: 30px;
       }
@@ -198,13 +229,21 @@
         font-size: 17px;
       }
 
+      .hero-text {
+        font-size: 15px;
+      }
+
       .info-grid {
         grid-template-columns: 1fr;
       }
 
       nav a {
         margin: 0 5px;
-        font-size: 13px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 55px 15px;
       }
     }
   </style>
@@ -212,6 +251,7 @@
 
 <body>
 
+  <!-- منوی سایت -->
   <nav>
     <a href="#about">معرفی</a>
     <a href="#programs">برنامه‌ها</a>
@@ -219,11 +259,17 @@
     <a href="#contact">تماس</a>
   </nav>
 
+
+  <!-- صفحه اصلی -->
   <header>
+
     <div class="hero">
+
       <div class="symbol">☪</div>
 
-      <h1>حسینیه زینبیه شهردراز</h1>
+      <h1>
+        حسینیه زینبیه شهردراز
+      </h1>
 
       <div class="subtitle">
         پایگاه مذهبی و فرهنگی
@@ -232,17 +278,26 @@
       <p class="hero-text">
         به پایگاه رسمی حسینیه زینبیه شهردراز خوش آمدید
       </p>
+
     </div>
+
   </header>
 
+
+  <!-- معرفی -->
   <section id="about">
-    <h2 class="section-title">معرفی حسینیه</h2>
+
+    <h2 class="section-title">
+      معرفی حسینیه
+    </h2>
 
     <div class="card">
+
       <p>
-        <strong>حسینیه زینبیه شهردراز</strong>، پایگاهی مذهبی و فرهنگی
-        در شهردرازِ شهرستان ایرانشهر، استان سیستان و بلوچستان است؛
-        محلی برای برگزاری مجالس اهل‌بیت علیهم‌السلام و برنامه‌های مذهبی و فرهنگی.
+        <strong>حسینیه زینبیه شهردراز</strong>،
+        پایگاهی مذهبی و فرهنگی در شهردرازِ شهرستان ایرانشهر،
+        استان سیستان و بلوچستان است؛ محلی برای برگزاری مجالس
+        اهل‌بیت علیهم‌السلام و برنامه‌های مذهبی و فرهنگی.
       </p>
 
       <br>
@@ -251,64 +306,111 @@
         این حسینیه در خدمت
         <strong>مستضعفین حسینیه زینبیه</strong>
         بوده و زمینه‌ای برای برگزاری مراسم مذهبی،
-        فعالیت‌های فرهنگی و ترویج فرهنگ اهل‌بیت علیهم‌السلام فراهم می‌کند.
+        فعالیت‌های فرهنگی و ترویج فرهنگ اهل‌بیت علیهم‌السلام
+        فراهم می‌کند.
       </p>
+
     </div>
+
   </section>
 
+
+  <!-- برنامه ها -->
   <section id="programs">
-    <h2 class="section-title">برنامه مراسم</h2>
+
+    <h2 class="section-title">
+      برنامه مراسم
+    </h2>
 
     <div class="coming">
-      <h3>📅 برنامه‌های مراسم و مناسبت‌ها</h3>
+
+      <h3>
+        📅 برنامه‌های مراسم و مناسبت‌ها
+      </h3>
 
       <p>
         برنامه‌های مراسم و مناسبت‌ها پس از مشخص شدن،
         در این بخش اطلاع‌رسانی خواهد شد.
       </p>
+
     </div>
+
   </section>
 
+
+  <!-- موقعیت -->
   <section id="location">
-    <h2 class="section-title">موقعیت و ارتباط</h2>
+
+    <h2 class="section-title">
+      موقعیت حسینیه
+    </h2>
 
     <div class="info-grid">
 
       <div class="info">
-        <div class="info-icon">📍</div>
-        <h3>موقعیت</h3>
+
+        <div class="info-icon">
+          📍
+        </div>
+
+        <h3>
+          آدرس
+        </h3>
+
         <p>
-          شهردراز، شهرستان ایرانشهر،
+          حسینیه زینبیه شهردراز
+          <br>
+          شهردراز، شهرستان ایرانشهر
+          <br>
           استان سیستان و بلوچستان
         </p>
 
         <a
           class="button"
-          href="https://www.google.com/maps/search/?api=1&query=شهردراز،+ایرانشهر،+سیستان+و+بلوچستان"
+          href="https://maps.app.goo.gl/Ng44iZuTXzJUhkzo9"
           target="_blank">
-          مشاهده در نقشه
+          مشاهده موقعیت دقیق در نقشه
         </a>
+
       </div>
 
+
       <div class="info" id="contact">
-        <div class="info-icon">📞</div>
-        <h3>شماره تماس</h3>
-        <p>۰۹۳۰۹۰۶۰۳۷۸</p>
+
+        <div class="info-icon">
+          📞
+        </div>
+
+        <h3>
+          شماره تماس
+        </h3>
+
+        <p>
+          ۰۹۳۰۹۰۶۰۳۷۸
+        </p>
 
         <a
           class="button"
           href="tel:09309060378">
-          تماس
+          تماس با حسینیه
         </a>
+
       </div>
 
     </div>
+
   </section>
 
-  <section>
-    <h2 class="section-title">شبکه اجتماعی</h2>
 
-    <div class="card" style="text-align:center;">
+  <!-- تیک تاک -->
+  <section>
+
+    <h2 class="section-title">
+      شبکه اجتماعی
+    </h2>
+
+    <div class="card social">
+
       <p>
         برای مشاهده محتوای حسینیه در تیک‌تاک ما را دنبال کنید.
       </p>
@@ -319,14 +421,22 @@
         target="_blank">
         ورود به تیک‌تاک
       </a>
+
     </div>
+
   </section>
 
+
+  <!-- پایین سایت -->
   <footer>
+
     حسینیه زینبیه شهردراز
+
     <br>
+
     © تمامی حقوق محفوظ است
+
   </footer>
 
 </body>
-</html>
+      </html>
