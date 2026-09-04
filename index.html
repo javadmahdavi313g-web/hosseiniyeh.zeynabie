@@ -26,7 +26,6 @@ body{
     line-height:1.9;
 }
 
-/* نوار بالا */
 header{
     position:sticky;
     top:0;
@@ -72,7 +71,6 @@ nav a:hover{
     color:#14283e;
 }
 
-/* بخش اصلی */
 .hero{
     min-height:720px;
     position:relative;
@@ -87,7 +85,6 @@ nav a:hover{
         linear-gradient(180deg,#fffdf8 0%,#f1eee5 100%);
 }
 
-/* طرح هندسی ظریف */
 .hero:before,
 .hero:after{
     content:"";
@@ -114,7 +111,6 @@ nav a:hover{
     max-width:850px;
 }
 
-/* آویز عکس */
 .portrait-hanger{
     position:relative;
     width:270px;
@@ -160,14 +156,14 @@ nav a:hover{
     margin:-2px auto 0;
 }
 
-/* قاب سپری */
+/* عکس بدون قاب طلایی */
 .shield{
     width:245px;
     height:310px;
     margin:auto;
     position:relative;
-    padding:7px;
-    background:linear-gradient(145deg,#a6812f,#e2c86e,#a6812f);
+    padding:0;
+    background:transparent;
     clip-path:polygon(
         8% 0,
         92% 0,
@@ -183,8 +179,8 @@ nav a:hover{
 .shield-inner{
     width:100%;
     height:100%;
-    background:#fff;
-    padding:6px;
+    background:transparent;
+    padding:0;
     clip-path:inherit;
 }
 
@@ -197,7 +193,6 @@ nav a:hover{
     clip-path:inherit;
 }
 
-/* متن */
 .title{
     font-size:clamp(30px,6vw,54px);
     font-weight:800;
@@ -218,7 +213,6 @@ nav a:hover{
     font-size:14px;
 }
 
-/* دکمه */
 .hero-btn{
     display:inline-block;
     margin-top:25px;
@@ -237,7 +231,6 @@ nav a:hover{
     background:#244565;
 }
 
-/* بخش‌ها */
 section{
     max-width:1050px;
     margin:auto;
@@ -262,7 +255,6 @@ section{
     border-radius:5px;
 }
 
-/* کارت معرفی */
 .about-card{
     background:#fffdf8;
     border:1px solid #e2d7b8;
@@ -272,7 +264,6 @@ section{
     font-size:16px;
 }
 
-/* برنامه */
 .program-card{
     background:#182f49;
     color:#fff;
@@ -296,7 +287,6 @@ section{
     color:#e8edf2;
 }
 
-/* تماس */
 .contact-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -328,7 +318,6 @@ section{
     word-break:break-word;
 }
 
-/* نقشه */
 .map-box{
     background:#fffdf8;
     border-radius:22px;
@@ -353,7 +342,6 @@ section{
     background:#294a69;
 }
 
-/* فوتر */
 footer{
     background:#152b45;
     color:#dce2e8;
@@ -367,7 +355,6 @@ footer{
     font-weight:700;
 }
 
-/* موبایل */
 @media(max-width:700px){
 
     .nav{
@@ -431,8 +418,6 @@ footer{
     </div>
 </header>
 
-
-<!-- قهرمان سایت -->
 <div class="hero">
 
     <div class="hero-content">
@@ -447,15 +432,14 @@ footer{
                 <div class="shield-inner">
 
                     <img
-                        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Portrait_of_Mojtaba_Khamenei_(2).jpg"
-                        alt="آیت‌الله سید مجتبی خامنه‌ای"
+                        src="leader.jpg"
+                        alt="تصویر"
                     >
 
                 </div>
             </div>
 
         </div>
-
 
         <h1 class="title">حسینیه زینبیه شهردراز</h1>
 
@@ -475,8 +459,6 @@ footer{
 
 </div>
 
-
-<!-- معرفی -->
 <section id="about">
 
     <h2 class="section-title">درباره حسینیه</h2>
@@ -502,8 +484,6 @@ footer{
 
 </section>
 
-
-<!-- برنامه‌ها -->
 <section id="programs">
 
     <h2 class="section-title">برنامه‌ها و مراسم</h2>
@@ -523,8 +503,6 @@ footer{
 
 </section>
 
-
-<!-- موقعیت -->
 <section id="location">
 
     <h2 class="section-title">موقعیت حسینیه</h2>
@@ -548,8 +526,6 @@ footer{
 
 </section>
 
-
-<!-- تماس -->
 <section id="contact">
 
     <h2 class="section-title">ارتباط با ما</h2>
@@ -565,7 +541,6 @@ footer{
             </a>
 
         </div>
-
 
         <div class="contact-card">
 
@@ -584,7 +559,6 @@ footer{
 
 </section>
 
-
 <footer>
 
     <div>
@@ -598,4 +572,4 @@ footer{
 </footer>
 
 </body>
-</html>
+    </html>
