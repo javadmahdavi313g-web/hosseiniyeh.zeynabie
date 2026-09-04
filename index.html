@@ -52,7 +52,7 @@ nav a:hover{
 }
 
 /* =====================
-   الهدر
+   الهيدر
 ===================== */
 
 .hero{
@@ -79,6 +79,85 @@ nav a:hover{
     background:rgba(202,166,78,.16);
     border-radius:50%;
     filter:blur(60px);
+}
+
+/* =====================
+   پرچم های پنج گوش
+===================== */
+
+.flag{
+    position:absolute;
+    top:0;
+    width:170px;
+    height:245px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #315b4c,
+        #193c31
+    );
+
+    border:2px solid #b7923e;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        100% 72%,
+        50% 100%,
+        0 72%
+    );
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transform-origin:top center;
+
+    animation:flagWave 4s ease-in-out infinite;
+}
+
+/* حاشیه تزئینی داخل پرچم */
+
+.flag:after{
+    content:"✦";
+    position:absolute;
+    inset:15px;
+    border:1px solid rgba(222,194,116,.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#e4c878;
+    font-size:35px;
+}
+
+/* پرچم راست */
+
+.flag-right{
+    right:5%;
+}
+
+/* پرچم چپ */
+
+.flag-left{
+    left:5%;
+    animation-delay:1.2s;
+}
+
+@keyframes flagWave{
+    0%,100%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(3deg);
+    }
+
+    50%{
+        transform:rotate(-4deg);
+    }
+
+    75%{
+        transform:rotate(2deg);
+    }
 }
 
 /* =====================
@@ -341,6 +420,19 @@ footer{
         min-height:600px;
     }
 
+    .flag{
+        width:95px;
+        height:170px;
+    }
+
+    .flag-right{
+        right:-12px;
+    }
+
+    .flag-left{
+        left:-12px;
+    }
+
     .leader{
         width:165px;
         height:220px;
@@ -390,6 +482,13 @@ footer{
 
 <header class="hero">
 
+    <!-- پرچم پنج گوش راست -->
+    <div class="flag flag-right"></div>
+
+    <!-- پرچم پنج گوش چپ -->
+    <div class="flag flag-left"></div>
+
+
     <!-- عکس آویزان -->
 
     <div class="portrait-area">
@@ -398,8 +497,8 @@ footer{
 
         <img
         class="leader"
-        src="leader.jpg"
-        alt="تصویر">
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Portrait_of_Mojtaba_Khamenei.jpg"
+        alt="سید مجتبی خامنه‌ای">
 
         <div class="leader-name">
             حضرت آیت‌الله سید مجتبی خامنه‌ای
