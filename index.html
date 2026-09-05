@@ -6,709 +6,461 @@
 
 <title>حسینیه زینبیه شهردراز</title>
 
+<meta name="description" content="وب‌سایت رسمی حسینیه زینبیه شهردراز">
+
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#eef2f0;
-    color:#26332f;
-    line-height:2;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f5f1e7;
+  color:#222;
+  line-height:2;
 }
 
-/* =====================
-   منوی سایت
-===================== */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.96);
-    border-bottom:1px solid #c5a55b;
-    padding:13px 8px;
-    text-align:center;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
+header{
+  position:relative;
+  min-height:620px;
+  background:linear-gradient(135deg,#063b25,#087443,#0b8b52);
+  color:white;
+  text-align:center;
+  overflow:hidden;
+  padding:35px 20px 70px;
 }
 
-nav a{
-    color:#34443e;
-    text-decoration:none;
-    margin:0 13px;
-    font-size:14px;
-    font-weight:bold;
+header:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(255,255,255,.08),transparent 35%);
+  pointer-events:none;
 }
 
-nav a:hover{
-    color:#a37b22;
-}
-
-/* =====================
-   الهيدر
-===================== */
-
-.hero{
-    min-height:650px;
-    position:relative;
-    overflow:hidden;
-    text-align:center;
-    padding-top:0;
-
-    background:
-    radial-gradient(circle at center top,#f8f4e7 0%,#e8eee9 45%,#dce6e1 100%);
-}
-
-/* نور پشت */
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:600px;
-    height:600px;
-    top:-250px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(202,166,78,.16);
-    border-radius:50%;
-    filter:blur(60px);
-}
-
-/* =====================
-   پرچم های پنج گوش
-===================== */
-
+/* پرچم‌های دو طرف */
 .flag{
-    position:absolute;
-    top:0;
-    width:170px;
-    height:245px;
+  position:absolute;
+  top:0;
+  width:170px;
+  height:245px;
 
-    background:
-    linear-gradient(
-        135deg,
-        #315b4c,
-        #193c31
-    );
+  background-image:url("https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg");
+  background-size:cover;
+  background-position:center;
 
-    border:2px solid #b7923e;
+  border:2px solid #b7923e;
 
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        100% 72%,
-        50% 100%,
-        0 72%
-    );
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    100% 72%,
+    50% 100%,
+    0 72%
+  );
 
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
 
-    transform-origin:top center;
-
-    animation:flagWave 4s ease-in-out infinite;
+  animation:flagWave 4s ease-in-out infinite;
+  z-index:2;
 }
-
-/* حاشیه تزئینی داخل پرچم */
 
 .flag:after{
-    content:"✦";
-    position:absolute;
-    inset:15px;
-    border:1px solid rgba(222,194,116,.55);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#e4c878;
-    font-size:35px;
+  content:"✦";
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(222,194,116,.55);
+  color:rgba(255,255,255,.75);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
 }
-
-/* پرچم راست */
 
 .flag-right{
-    right:5%;
+  right:5%;
 }
 
-/* پرچم چپ */
-
 .flag-left{
-    left:5%;
-    animation-delay:1.2s;
+  left:5%;
+  animation-delay:1.2s;
 }
 
 @keyframes flagWave{
-    0%,100%{
-        transform:rotate(0deg);
-    }
-
-    25%{
-        transform:rotate(3deg);
-    }
-
-    50%{
-        transform:rotate(-4deg);
-    }
-
-    75%{
-        transform:rotate(2deg);
-    }
+  0%,100%{
+    transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(2deg);
+  }
 }
 
-/* =====================
-   آویزان بودن عکس
-===================== */
-
+/* بخش عکس */
 .portrait-area{
-    position:relative;
-    z-index:10;
-    padding-top:25px;
+  position:relative;
+  z-index:10;
+  padding-top:25px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
-
-/* نخ آویزان */
 
 .hanging-line{
-    width:2px;
-    height:55px;
-    background:#b08b39;
-    margin:auto;
+  width:2px;
+  height:55px;
+  background:#d4b45e;
 }
 
-/* عکس */
-
+/* قاب عکس با پایین مثلثی */
 .leader{
-    width:205px;
-    height:270px;
-    object-fit:cover;
-    object-position:center top;
+  width:205px;
+  height:270px;
 
-    border:4px solid #c5a55b;
-    border-radius:12px;
+  object-fit:cover;
 
-    background:#fff;
+  border:4px solid #b7923e;
+  border-radius:12px;
+  padding:6px;
 
-    padding:6px;
+  background:#fff;
 
-    box-shadow:
-    0 12px 35px rgba(40,50,45,.22);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+  clip-path:polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
 }
 
-/* نوشته زیر عکس */
-
-.leader-name{
-    margin-top:15px;
-    color:#735719;
-    font-size:21px;
-    font-weight:bold;
+.leader-title{
+  margin-top:15px;
+  font-size:19px;
+  font-weight:bold;
 }
 
-.leader-text{
-    color:#52645d;
-    font-size:14px;
-    margin-top:2px;
+.leader-subtitle{
+  font-size:14px;
+  opacity:.9;
 }
 
 /* عنوان */
-
 .hero-title{
-    position:relative;
-    z-index:10;
-    margin-top:30px;
+  margin-top:35px;
+  font-size:38px;
+  font-weight:bold;
+  text-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-.hero-title h1{
-    font-size:42px;
-    color:#755a1c;
-    text-shadow:0 2px 8px rgba(0,0,0,.08);
+.hero-subtitle{
+  margin-top:5px;
+  font-size:18px;
+  opacity:.9;
 }
 
-.hero-title p{
-    color:#53645e;
-    font-size:18px;
+/* دکمه‌های منو */
+nav{
+  position:relative;
+  z-index:20;
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-/* =====================
-   بخش ها
-===================== */
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 18px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:25px;
+  transition:.3s;
+}
 
+nav a:hover{
+  background:white;
+  color:#087443;
+}
+
+/* بخش‌های سایت */
 section{
-    max-width:1050px;
-    margin:auto;
-    padding:70px 20px;
+  max-width:1000px;
+  margin:35px auto;
+  padding:30px 25px;
 }
-
-.title{
-    text-align:center;
-    color:#806522;
-    font-size:29px;
-    margin-bottom:35px;
-}
-
-.title span{
-    display:block;
-    font-size:14px;
-    color:#71807a;
-    margin-top:4px;
-}
-
-/* کارت */
 
 .card{
-    background:#fff;
-    border:1px solid #d8d8ca;
-    border-radius:22px;
-    padding:35px;
-    box-shadow:0 10px 30px rgba(45,65,55,.08);
+  background:white;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  border-top:4px solid #087443;
 }
 
-.card p{
-    color:#475852;
-    font-size:16px;
+h2{
+  color:#087443;
+  margin-bottom:15px;
+  font-size:27px;
 }
 
-.highlight{
-    color:#856921;
-    font-weight:bold;
+p{
+  font-size:16px;
 }
 
-/* =====================
-   برنامه
-===================== */
-
+/* برنامه‌ها */
 .program{
-    background:
-    linear-gradient(135deg,#ffffff,#f1f5f1);
-
-    border:1px solid #d1bc7d;
-    border-radius:22px;
-
-    padding:45px 20px;
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(50,60,50,.08);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:20px;
 }
 
-.program-icon{
-    font-size:48px;
+.program-item{
+  background:#f5f1e7;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
 }
 
-.program h3{
-    color:#806522;
-    font-size:21px;
-}
-
-.program p{
-    color:#66756f;
-    margin-top:8px;
-}
-
-/* =====================
-   اطلاعات
-===================== */
-
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
+/* موقعیت */
 .info{
-    background:#fff;
-    border:1px solid #d8ded9;
-    border-radius:22px;
-    padding:30px 20px;
-    text-align:center;
-
-    box-shadow:0 10px 28px rgba(45,65,55,.07);
-
-    transition:.3s;
+  margin-top:12px;
 }
 
-.info:hover{
-    transform:translateY(-4px);
-    border-color:#c6a354;
+.info strong{
+  color:#087443;
 }
 
-.icon{
-    font-size:40px;
-}
-
-.info h3{
-    color:#806522;
-    font-size:20px;
-    margin:5px 0;
-}
-
-.info p{
-    color:#5c6b65;
-    font-size:15px;
-}
-
-/* =====================
-   دکمه
-===================== */
-
+/* دکمه */
 .button{
-    display:inline-block;
-
-    margin-top:18px;
-
-    padding:10px 24px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(135deg,#c9a750,#a8822e);
-
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    box-shadow:0 7px 18px rgba(100,80,30,.18);
-
-    transition:.3s;
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 20px;
+  background:#087443;
+  color:white;
+  text-decoration:none;
+  border-radius:25px;
 }
 
-.button:hover{
-    transform:translateY(-3px);
-    background:#98752a;
-}
-
-/* =====================
-   فوتر
-===================== */
-
+/* فوتر */
 footer{
-    text-align:center;
-    padding:35px 20px;
-
-    background:#dfe7e2;
-
-    border-top:1px solid #c8b06b;
-
-    color:#65736d;
-
-    font-size:13px;
+  background:#063b25;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:50px;
 }
 
-.footer-title{
-    color:#806522;
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:4px;
+footer p{
+  font-size:14px;
 }
 
-/* =====================
-   موبایل
-===================== */
+/* موبایل */
+@media(max-width:600px){
 
-@media(max-width:650px){
+  .flag{
+    width:105px;
+    height:170px;
+  }
 
-    nav a{
-        margin:0 5px;
-        font-size:12px;
-    }
+  .flag-right{
+    right:2%;
+  }
 
-    .hero{
-        min-height:600px;
-    }
+  .flag-left{
+    left:2%;
+  }
 
-    .flag{
-        width:95px;
-        height:170px;
-    }
+  .leader{
+    width:180px;
+    height:245px;
+  }
 
-    .flag-right{
-        right:-12px;
-    }
+  .hero-title{
+    font-size:28px;
+    margin-top:30px;
+  }
 
-    .flag-left{
-        left:-12px;
-    }
+  .hero-subtitle{
+    font-size:15px;
+  }
 
-    .leader{
-        width:165px;
-        height:220px;
-    }
+  header{
+    min-height:570px;
+  }
 
-    .hero-title h1{
-        font-size:29px;
-    }
+  section{
+    padding:20px 15px;
+  }
 
-    .hero-title p{
-        font-size:15px;
-    }
-
-    .leader-name{
-        font-size:18px;
-    }
-
-    .info-grid{
-        grid-template-columns:1fr;
-    }
-
-    section{
-        padding:55px 15px;
-    }
-
-    .card{
-        padding:25px 20px;
-    }
+  .card{
+    padding:22px 18px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- منو -->
+<header>
 
-<nav>
-    <a href="#about">معرفی</a>
+  <div class="flag flag-right"></div>
+  <div class="flag flag-left"></div>
+
+  <div class="portrait-area">
+
+    <div class="hanging-line"></div>
+
+    <img
+      class="leader"
+      src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Portrait_of_Mojtaba_Khamenei.jpg"
+      alt="تصویر رهبر معظم انقلاب اسلامی"
+    >
+
+    <div class="leader-title">
+      حضرت آیت‌الله سید مجتبی خامنه‌ای
+    </div>
+
+    <div class="leader-subtitle">
+      رهبر معظم انقلاب اسلامی
+    </div>
+
+  </div>
+
+  <h1 class="hero-title">
+    حسینیه زینبیه شهردراز
+  </h1>
+
+  <div class="hero-subtitle">
+    پایگاه مذهبی و فرهنگی
+  </div>
+
+  <nav>
+    <a href="#intro">معرفی</a>
     <a href="#programs">برنامه‌ها</a>
     <a href="#location">موقعیت</a>
     <a href="#contact">تماس</a>
-</nav>
-
-
-<!-- صفحه اصلی -->
-
-<header class="hero">
-
-    <!-- پرچم پنج گوش راست -->
-    <div class="flag flag-right"></div>
-
-    <!-- پرچم پنج گوش چپ -->
-    <div class="flag flag-left"></div>
-
-
-    <!-- عکس آویزان -->
-
-    <div class="portrait-area">
-
-        <div class="hanging-line"></div>
-
-        <img
-        class="leader"
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Portrait_of_Mojtaba_Khamenei.jpg"
-        alt="سید مجتبی خامنه‌ای">
-
-        <div class="leader-name">
-            حضرت آیت‌الله سید مجتبی خامنه‌ای
-        </div>
-
-        <div class="leader-text">
-            رهبر معظم انقلاب اسلامی
-        </div>
-
-    </div>
-
-
-    <!-- عنوان حسینیه -->
-
-    <div class="hero-title">
-
-        <h1>
-            حسینیه زینبیه شهردراز
-        </h1>
-
-        <p>
-            پایگاه مذهبی و فرهنگی
-        </p>
-
-    </div>
+  </nav>
 
 </header>
 
 
-<!-- معرفی -->
+<section id="intro">
 
-<section id="about">
+  <div class="card">
 
-    <h2 class="title">
-        معرفی حسینیه
-        <span>محفل نور و معارف اهل‌بیت علیهم‌السلام</span>
-    </h2>
+    <h2>معرفی حسینیه</h2>
 
-    <div class="card">
+    <p>
+      حسینیه زینبیه شهردراز ، پایگاهی مذهبی و فرهنگی در شهردرازِ شهرستان ایرانشهر، استان سیستان و بلوچستان است؛ محلی برای برگزاری مجالس اهل‌بیت علیهم‌السلام و برنامه‌های مذهبی و فرهنگی.
+    </p>
 
-        <p>
-            <span class="highlight">
-                حسینیه زینبیه شهردراز
-            </span>
-            ، پایگاهی مذهبی و فرهنگی در شهردرازِ شهرستان ایرانشهر،
-            استان سیستان و بلوچستان است؛ محلی برای برگزاری مجالس
-            اهل‌بیت علیهم‌السلام و برنامه‌های مذهبی و فرهنگی.
-        </p>
+    <p>
+      این حسینیه در خدمت مستضعفین حسینیه زینبیه بوده و زمینه‌ای برای برگزاری مراسم مذهبی، فعالیت‌های فرهنگی و ترویج فرهنگ اهل‌بیت علیهم‌السلام فراهم می‌کند.
+    </p>
 
-        <br>
-
-        <p>
-            این حسینیه در خدمت
-            <span class="highlight">
-                مستضعفین حسینیه زینبیه
-            </span>
-            بوده و زمینه‌ای برای برگزاری مراسم مذهبی،
-            فعالیت‌های فرهنگی و ترویج فرهنگ اهل‌بیت علیهم‌السلام
-            فراهم می‌کند.
-        </p>
-
-    </div>
+  </div>
 
 </section>
 
-
-<!-- برنامه -->
 
 <section id="programs">
 
-    <h2 class="title">
-        برنامه مراسم
-        <span>مناسبت‌ها و مجالس حسینیه</span>
-    </h2>
+  <div class="card">
+
+    <h2>برنامه‌ها</h2>
 
     <div class="program">
 
-        <div class="program-icon">
-            📜
-        </div>
+      <div class="program-item">
+        مجالس اهل‌بیت علیهم‌السلام
+      </div>
 
-        <h3>
-            برنامه مراسم و مناسبت‌ها
-        </h3>
+      <div class="program-item">
+        مراسم مذهبی
+      </div>
 
-        <p>
-            برنامه‌های مراسم و مناسبت‌ها پس از مشخص شدن،
-            در این بخش اطلاع‌رسانی خواهد شد.
-        </p>
+      <div class="program-item">
+        فعالیت‌های فرهنگی
+      </div>
 
     </div>
 
+  </div>
+
 </section>
 
-
-<!-- موقعیت -->
 
 <section id="location">
 
-    <h2 class="title">
-        موقعیت حسینیه
-        <span>آدرس دقیق حسینیه زینبیه شهردراز</span>
-    </h2>
+  <div class="card">
 
-    <div class="info-grid">
+    <h2>موقعیت حسینیه</h2>
 
-        <div class="info">
-
-            <div class="icon">
-                📍
-            </div>
-
-            <h3>
-                موقعیت دقیق
-            </h3>
-
-            <p>
-                حسینیه زینبیه شهردراز
-                <br>
-                شهردراز، شهرستان ایرانشهر
-                <br>
-                استان سیستان و بلوچستان
-            </p>
-
-            <a
-            class="button"
-            href="https://maps.app.goo.gl/Ng44iZuTXzJUhkzo9"
-            target="_blank">
-
-                باز کردن موقعیت دقیق
-
-            </a>
-
-        </div>
-
-
-        <div class="info" id="contact">
-
-            <div class="icon">
-                ☎️
-            </div>
-
-            <h3>
-                شماره تماس
-            </h3>
-
-            <p>
-                ۰۹۳۰۹۰۶۰۳۷۸
-            </p>
-
-            <a
-            class="button"
-            href="tel:09309060378">
-
-                تماس با حسینیه
-
-            </a>
-
-        </div>
-
+    <div class="info">
+      <strong>نام:</strong>
+      حسینیه زینبیه شهردراز
     </div>
+
+    <div class="info">
+      <strong>شهر:</strong>
+      شهردراز، شهرستان ایرانشهر
+    </div>
+
+    <div class="info">
+      <strong>استان:</strong>
+      سیستان و بلوچستان، ایران
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- تیک تاک -->
+<section id="contact">
 
-<section>
+  <div class="card">
 
-    <h2 class="title">
-        رسانه حسینیه
-        <span>محتوا و برنامه‌های حسینیه در فضای مجازی</span>
-    </h2>
+    <h2>تماس با ما</h2>
 
-    <div class="card" style="text-align:center;">
+    <div class="info">
+      <strong>شماره تماس:</strong>
+      09309060378
+    </div>
 
-        <p>
-            برای مشاهده محتوای حسینیه زینبیه شهردراز
-            در تیک‌تاک ما را دنبال کنید.
-        </p>
-
-        <a
+    <div class="info">
+      <strong>تیک‌تاک:</strong>
+      <a
         class="button"
         href="https://www.tiktok.com/@yakhebar?_r=1&_t=ZS-99SlSwcoJuL"
-        target="_blank">
-
-            ورود به صفحه تیک‌تاک
-
-        </a>
-
+        target="_blank"
+      >
+        صفحه تیک‌تاک
+      </a>
     </div>
+
+  </div>
 
 </section>
 
-
-<!-- فوتر -->
 
 <footer>
 
-    <div class="footer-title">
-        حسینیه زینبیه شهردراز
-    </div>
+  <p>
+    حسینیه زینبیه شهردراز
+  </p>
 
+  <p>
     پایگاه مذهبی و فرهنگی
-
-    <br><br>
-
-    © تمامی حقوق محفوظ است
+  </p>
 
 </footer>
 
 </body>
-    </html>
+</html>
